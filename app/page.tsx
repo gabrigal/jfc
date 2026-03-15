@@ -112,20 +112,6 @@ const BathroomSvg = () => (
     <circle cx="7" cy="6" r="0.5" fill="currentColor" />
   </svg>
 )
-const BasementSvg = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="4" width="20" height="13" rx="1" />
-    <path d="M2 10h20M7 4v13M17 4v13" />
-    <path d="M6 20l2-3m4 3l2-3M6 20h12" />
-  </svg>
-)
-const AdditionSvg = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1v-9.5z" />
-    <path d="M9 21V12h6v9" />
-    <path d="M15 7h3v3h-3z" />
-  </svg>
-)
 const FlooringSvg = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="9" height="9" rx="0.5" />
@@ -134,11 +120,38 @@ const FlooringSvg = () => (
     <rect x="13" y="13" width="9" height="9" rx="0.5" />
   </svg>
 )
+const PlasteringSvg = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 17l4-4 3 3 4-5 4 3" />
+    <rect x="2" y="3" width="20" height="14" rx="1" />
+    <path d="M2 20h20" />
+  </svg>
+)
 const PaintingSvg = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18.37 2.63L14 7l-1.59-1.59a2 2 0 00-2.82 0L8 7l9 9 1.59-1.59a2 2 0 000-2.82L17 10l4.37-4.37a2.12 2.12 0 00-3-3z" />
     <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7" />
     <path d="M14.5 17.5L4.5 15" />
+  </svg>
+)
+const CarpentrySvg = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+  </svg>
+)
+const ClosetSvg = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="3" width="20" height="18" rx="1" />
+    <path d="M12 3v18" />
+    <path d="M9 12h1m5 0h-1" />
+    <path d="M2 7h20" />
+  </svg>
+)
+const RadiatorSvg = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="6" width="20" height="12" rx="1" />
+    <path d="M6 6v12M10 6v12M14 6v12M18 6v12" />
+    <path d="M2 9h20M2 15h20" />
   </svg>
 )
 
@@ -158,8 +171,8 @@ function SectionHeader({
   return (
     <div ref={ref} className="mb-14">
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-8 h-px bg-gold-500" />
-        <span className="font-heading text-gold-400 text-xs tracking-[0.4em] uppercase">{eyebrow}</span>
+        <div className="w-8 h-px bg-brand-500" />
+        <span className="font-heading text-brand-400 text-xs tracking-[0.4em] uppercase">{eyebrow}</span>
       </div>
       <h2 className="font-display text-5xl md:text-7xl leading-[0.92] text-warm-100 mb-0">{headline}</h2>
       {sub && (
@@ -199,11 +212,11 @@ function Nav() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="flex flex-col">
-            <span className="font-display text-[1.7rem] leading-none tracking-[0.12em] text-gold-400 group-hover:text-gold-300 transition-colors">
+            <span className="font-display text-[1.7rem] leading-none tracking-[0.12em] text-brand-400 group-hover:text-brand-300 transition-colors">
               JFC
             </span>
           </div>
-          <div className="w-px h-8 bg-gold-600/40" />
+          <div className="w-px h-8 bg-brand-600/40" />
           <div className="flex flex-col">
             <span className="font-heading text-[0.65rem] tracking-[0.35em] text-warm-300 uppercase leading-tight">
               Renovations
@@ -220,7 +233,7 @@ function Nav() {
             <a
               key={label}
               href={href}
-              className="nav-link font-heading text-xs tracking-[0.3em] uppercase text-warm-300 hover:text-gold-400 transition-colors"
+              className="nav-link font-heading text-xs tracking-[0.3em] uppercase text-warm-300 hover:text-brand-400 transition-colors"
             >
               {label}
             </a>
@@ -230,7 +243,7 @@ function Nav() {
         {/* CTA */}
         <a
           href="tel:7185550100"
-          className="hidden md:flex items-center gap-2.5 bg-gold-500 hover:bg-gold-400 text-ink-900 px-5 py-2.5 font-heading text-xs tracking-[0.2em] uppercase transition-all hover:shadow-lg hover:shadow-gold-500/25 hover:-translate-y-px"
+          className="hidden md:flex items-center gap-2.5 bg-brand-500 hover:bg-brand-400 text-ink-900 px-5 py-2.5 font-heading text-xs tracking-[0.2em] uppercase transition-all hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-px"
         >
           <PhoneIcon />
           <span>(718) 555-0100</span>
@@ -239,7 +252,7 @@ function Nav() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-warm-200 hover:text-gold-400 transition-colors p-1"
+          className="md:hidden text-warm-200 hover:text-brand-400 transition-colors p-1"
           aria-label="Toggle menu"
         >
           {open ? <XIcon /> : <MenuIcon />}
@@ -258,12 +271,12 @@ function Nav() {
               key={label}
               href={href}
               onClick={() => setOpen(false)}
-              className="font-heading text-xs tracking-[0.3em] uppercase text-warm-300 hover:text-gold-400 transition-colors py-1"
+              className="font-heading text-xs tracking-[0.3em] uppercase text-warm-300 hover:text-brand-400 transition-colors py-1"
             >
               {label}
             </a>
           ))}
-          <a href="tel:7185550100" className="flex items-center gap-2 text-gold-400 font-heading text-sm mt-2">
+          <a href="tel:7185550100" className="flex items-center gap-2 text-brand-400 font-heading text-sm mt-2">
             <PhoneIcon /> (718) 555-0100
           </a>
         </div>
@@ -283,14 +296,14 @@ function Hero() {
           className="absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full opacity-[0.07]"
           style={{ background: 'radial-gradient(circle, #C8922A 0%, transparent 70%)' }}
         />
-        {/* Cool deep blue bloom — bottom left */}
+        {/* Warm charcoal bloom — bottom left */}
         <div
-          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full opacity-[0.09]"
-          style={{ background: 'radial-gradient(circle, #1E3A5F 0%, transparent 70%)' }}
+          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full opacity-[0.06]"
+          style={{ background: 'radial-gradient(circle, #EA580C 0%, transparent 70%)' }}
         />
         {/* Vertical gold rule */}
         <div className="absolute left-[72px] top-1/4 bottom-1/4 w-px hidden xl:block"
-          style={{ background: 'linear-gradient(to bottom, transparent, rgba(200,146,42,0.5), transparent)' }}
+          style={{ background: 'linear-gradient(to bottom, transparent, rgba(249,115,22,0.5), transparent)' }}
         />
       </div>
 
@@ -300,9 +313,9 @@ function Hero() {
           <div className="max-w-3xl">
             {/* Eyebrow */}
             <div className="hero-eyebrow flex items-center gap-3 mb-8">
-              <div className="w-10 h-px bg-gold-500" />
-              <span className="font-heading text-gold-400 text-xs tracking-[0.45em] uppercase">
-                Woodside, Queens · Est. 2004
+              <div className="w-10 h-px bg-brand-500" />
+              <span className="font-heading text-brand-400 text-xs tracking-[0.45em] uppercase">
+                Woodside, Queens · Est. 2007
               </span>
             </div>
 
@@ -335,20 +348,20 @@ function Hero() {
             </div>
 
             <p className="hero-body font-body text-warm-300 text-lg leading-relaxed max-w-lg">
-              JFC Renovations delivers expert craftsmanship across Queens and all of NYC — kitchens,
-              bathrooms, basements, additions, flooring, and painting. Every project, done right.
+              JFC Renovations delivers expert craftsmanship across Queens, Manhattan, Brooklyn, and
+              all NYC boroughs — residential &amp; commercial, small and large. Every project, done right.
             </p>
 
             <div className="hero-cta flex flex-wrap gap-4 mt-9">
               <a
                 href="#contact"
-                className="bg-gold-500 hover:bg-gold-400 text-ink-900 px-9 py-4 font-heading text-sm tracking-[0.2em] uppercase transition-all hover:shadow-xl hover:shadow-gold-500/25 hover:-translate-y-px"
+                className="bg-brand-500 hover:bg-brand-400 text-ink-900 px-9 py-4 font-heading text-sm tracking-[0.2em] uppercase transition-all hover:shadow-xl hover:shadow-brand-500/25 hover:-translate-y-px"
               >
                 Get Free Estimate
               </a>
               <a
                 href="#services"
-                className="border border-warm-100/20 hover:border-gold-500/60 text-warm-200 hover:text-gold-400 px-9 py-4 font-heading text-sm tracking-[0.2em] uppercase transition-all"
+                className="border border-warm-100/20 hover:border-brand-500/60 text-warm-200 hover:text-brand-400 px-9 py-4 font-heading text-sm tracking-[0.2em] uppercase transition-all"
               >
                 Our Services
               </a>
@@ -358,16 +371,16 @@ function Hero() {
           {/* Right: Floating stat cards */}
           <div className="hidden lg:flex flex-col gap-4 min-w-[220px]">
             {[
-              { num: '20+', label: 'Years Experience', sub: 'Serving Queens since 2004' },
-              { num: '500+', label: 'Projects Done', sub: 'Kitchens to full additions' },
+              { num: '25+', label: 'Years Experience', sub: 'Serving NYC since 2007' },
+              { num: '1,000+', label: 'Projects Done', sub: 'Residential & commercial' },
               { num: '100%', label: 'Licensed & Insured', sub: 'NYS certified contractor' },
             ].map(({ num, label, sub }, i) => (
               <div
                 key={num}
-                className="hero-stat border border-warm-100/[0.07] bg-white/[0.025] backdrop-blur-sm px-6 py-5 hover:border-gold-500/40 transition-colors group"
+                className="hero-stat border border-warm-100/[0.07] bg-white/[0.025] backdrop-blur-sm px-6 py-5 hover:border-brand-500/40 transition-colors group"
                 style={{ animationDelay: `${0.7 + i * 0.14}s` }}
               >
-                <div className="font-display text-5xl text-gold-400 leading-none group-hover:text-gold-300 transition-colors">
+                <div className="font-display text-5xl text-brand-400 leading-none group-hover:text-brand-300 transition-colors">
                   {num}
                 </div>
                 <div className="font-heading text-warm-100 text-sm tracking-wide mt-1">{label}</div>
@@ -380,7 +393,7 @@ function Hero() {
 
       {/* Bottom separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(to right, transparent, rgba(200,146,42,0.35), transparent)' }}
+        style={{ background: 'linear-gradient(to right, transparent, rgba(249,115,22,0.35), transparent)' }}
       />
     </section>
   )
@@ -390,33 +403,43 @@ function Hero() {
 const SERVICES = [
   {
     icon: <KitchenSvg />,
-    title: 'Kitchen Remodeling',
-    desc: 'Complete kitchen transformations — custom cabinetry, stone countertops, new layouts, appliances, and finishes that last.',
+    title: 'Kitchen Renovations',
+    desc: 'Complete kitchen transformations — custom cabinetry, stone countertops, new layouts, and finishes built to last.',
   },
   {
     icon: <BathroomSvg />,
-    title: 'Bathroom Renovation',
-    desc: 'Luxury bath upgrades from tile and vanities to walk-in showers, soaking tubs, and full plumbing reconfigurations.',
-  },
-  {
-    icon: <BasementSvg />,
-    title: 'Basement Finishing',
-    desc: 'Turn your unfinished basement into a functional living area, home office, gym, or entertainment space.',
-  },
-  {
-    icon: <AdditionSvg />,
-    title: 'Home Additions',
-    desc: 'Expertly built additions to expand your footprint — extra bedrooms, sunrooms, dormer extensions, and garage conversions.',
+    title: 'Bathroom Renovations',
+    desc: 'Full bath overhauls from tile and vanities to walk-in showers, soaking tubs, and plumbing reconfigurations.',
   },
   {
     icon: <FlooringSvg />,
-    title: 'Flooring',
-    desc: 'Hardwood, engineered wood, ceramic tile, LVP, and more — flawlessly installed in every room of your home.',
+    title: 'All Types of Flooring',
+    desc: 'Hardwood, engineered wood, ceramic tile, LVP, laminate, and more — expertly installed in any room.',
+  },
+  {
+    icon: <PlasteringSvg />,
+    title: 'Plastering',
+    desc: 'Smooth wall finishes, skim coats, patch repairs, and decorative plaster work for walls and ceilings.',
   },
   {
     icon: <PaintingSvg />,
     title: 'Painting',
-    desc: 'Interior and exterior painting with premium paints, clean prep work, and crisp, professional results every time.',
+    desc: 'Interior and exterior painting with premium paints, meticulous prep, and crisp professional results.',
+  },
+  {
+    icon: <CarpentrySvg />,
+    title: 'Carpentry',
+    desc: 'Custom trim, moldings, built-ins, doors, and fine woodworking crafted to fit your space perfectly.',
+  },
+  {
+    icon: <ClosetSvg />,
+    title: 'Closets',
+    desc: 'Custom closet design and build — walk-ins, reach-ins, and built-in storage solutions for every room.',
+  },
+  {
+    icon: <RadiatorSvg />,
+    title: 'Radiator Covers',
+    desc: 'Custom-built radiator covers that blend seamlessly with your interior while improving safety and style.',
   },
 ]
 
@@ -429,23 +452,23 @@ function Services() {
         <SectionHeader
           eyebrow="What We Do"
           headline={<>OUR<br />SERVICES</>}
-          sub="Expert renovation work delivered with precision and care — no job too big, no detail too small."
+          sub="Residential & commercial renovation work across Queens, Manhattan, Brooklyn and all NYC boroughs — small jobs and large, done right."
         />
 
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {SERVICES.map(({ icon, title, desc }) => (
             <div
               key={title}
-              className="group border border-white/[0.06] bg-ink-900/60 p-7 hover:border-gold-500/50 hover:bg-ink-900/90 transition-all duration-300 cursor-default"
+              className="group border border-white/[0.06] bg-ink-900/60 p-7 hover:border-brand-500/50 hover:bg-ink-900/90 transition-all duration-300 cursor-default"
             >
-              <div className="text-gold-500 mb-5 group-hover:scale-110 group-hover:text-gold-400 transition-all duration-300">
+              <div className="text-brand-500 mb-5 group-hover:scale-110 group-hover:text-brand-400 transition-all duration-300">
                 {icon}
               </div>
-              <h3 className="font-heading text-warm-100 text-lg tracking-wide mb-2.5 group-hover:text-gold-300 transition-colors">
+              <h3 className="font-heading text-warm-100 text-lg tracking-wide mb-2.5 group-hover:text-brand-300 transition-colors">
                 {title}
               </h3>
               <p className="font-body text-warm-400 text-sm leading-relaxed">{desc}</p>
-              <div className="mt-5 w-0 group-hover:w-12 h-px bg-gold-500/60 transition-all duration-500" />
+              <div className="mt-5 w-0 group-hover:w-12 h-px bg-brand-500/60 transition-all duration-500" />
             </div>
           ))}
         </div>
@@ -476,7 +499,7 @@ function About() {
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-display text-[10rem] leading-none text-gold-600/15 select-none tracking-widest">
+                <span className="font-display text-[10rem] leading-none text-brand-600/15 select-none tracking-widest">
                   JFC
                 </span>
                 <span className="font-heading text-warm-400/30 text-xs tracking-[0.4em] uppercase mt-2">
@@ -485,19 +508,19 @@ function About() {
               </div>
               <div
                 className="absolute inset-0"
-                style={{ background: 'linear-gradient(to top, #080C18 0%, transparent 50%)' }}
+                style={{ background: 'linear-gradient(to top, #111111 0%, transparent 50%)' }}
               />
             </div>
 
             {/* Corner accents */}
-            <div className="absolute -bottom-4 -right-4 w-28 h-28 border-b-2 border-r-2 border-gold-500/50 pointer-events-none" />
-            <div className="absolute -top-4 -left-4 w-18 h-18 border-t-2 border-l-2 border-gold-700/30 pointer-events-none" />
+            <div className="absolute -bottom-4 -right-4 w-28 h-28 border-b-2 border-r-2 border-brand-500/50 pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-18 h-18 border-t-2 border-l-2 border-brand-700/30 pointer-events-none" />
 
             {/* Floating badge */}
-            <div className="absolute bottom-8 left-8 bg-gold-500 text-ink-900 px-5 py-4">
-              <div className="font-display text-4xl leading-none">20+</div>
+            <div className="absolute bottom-8 left-8 bg-brand-500 text-ink-900 px-5 py-4">
+              <div className="font-display text-4xl leading-none">25+</div>
               <div className="font-heading text-[0.65rem] tracking-[0.2em] uppercase mt-1">
-                Years in Queens
+                Years in NYC
               </div>
             </div>
           </div>
@@ -505,14 +528,14 @@ function About() {
           {/* Text side */}
           <div ref={rightRef}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-gold-500" />
-              <span className="font-heading text-gold-400 text-xs tracking-[0.4em] uppercase">
+              <div className="w-8 h-px bg-brand-500" />
+              <span className="font-heading text-brand-400 text-xs tracking-[0.4em] uppercase">
                 Who We Are
               </span>
             </div>
 
             <h2 className="font-display text-5xl md:text-6xl leading-[0.92] text-warm-100 mb-7">
-              WOODSIDE&apos;S<br />
+              NYC&apos;S<br />
               <span className="gold-shimmer">TRUSTED</span>
               <br />
               RENOVATORS
@@ -520,18 +543,18 @@ function About() {
 
             <div className="space-y-4 font-body text-warm-400 leading-relaxed">
               <p>
-                JFC Renovations has been transforming homes across Woodside, Queens and the greater NYC metro
-                area for over two decades. We built our reputation one satisfied customer at a time, and we
-                intend to keep it that way.
+                JFC Renovations has been transforming homes and businesses across Queens, Manhattan, Brooklyn,
+                and all of NYC since 2007. Over 1,000 completed projects — residential and commercial — built
+                on honest work and exceptional craftsmanship.
               </p>
               <p>
-                As a fully licensed and insured New York contractor, we handle everything from small bathroom
-                updates to large-scale home additions — always on time, on budget, and to the highest standard
-                of workmanship.
+                As a fully licensed and insured New York contractor, we take on projects of every size:
+                from a single bathroom refresh to full interior renovations for commercial spaces. No job
+                is too small, and no project is too large.
               </p>
               <p>
-                We&apos;re not a franchise. We&apos;re your neighbors, and we treat every home we work in as
-                if it were our own.
+                We&apos;re not a franchise. We&apos;re your neighbors, and we treat every space we work in
+                as if it were our own.
               </p>
             </div>
 
@@ -539,12 +562,12 @@ function About() {
               {[
                 'Fully licensed & insured in New York State',
                 'Free, no-obligation in-home estimates',
-                'Local family-run business since 2004',
+                'Local family-run business since 2007',
                 'All work backed by a written guarantee',
                 'We pull all required permits — always above board',
               ].map((point) => (
                 <li key={point} className="flex items-start gap-3">
-                  <span className="text-gold-400 mt-0.5 flex-shrink-0">
+                  <span className="text-brand-400 mt-0.5 flex-shrink-0">
                     <CheckIcon />
                   </span>
                   <span className="font-body text-warm-300 text-sm">{point}</span>
@@ -554,7 +577,7 @@ function About() {
 
             <a
               href="#contact"
-              className="inline-block mt-9 bg-gold-500 hover:bg-gold-400 text-ink-900 px-9 py-4 font-heading text-sm tracking-[0.2em] uppercase transition-all hover:shadow-xl hover:shadow-gold-500/25 hover:-translate-y-px"
+              className="inline-block mt-9 bg-brand-500 hover:bg-brand-400 text-ink-900 px-9 py-4 font-heading text-sm tracking-[0.2em] uppercase transition-all hover:shadow-xl hover:shadow-brand-500/25 hover:-translate-y-px"
             >
               Start Your Project
             </a>
@@ -570,12 +593,12 @@ function StatsBand() {
   const ref = useStaggerReveal(4, 80)
 
   return (
-    <section className="bg-gold-500 py-12">
+    <section className="bg-brand-500 py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-2 divide-x-0 md:divide-x divide-ink-900/20">
           {[
-            { num: '20+', label: 'Years Experience' },
-            { num: '500+', label: 'Projects Completed' },
+            { num: '25+', label: 'Years Experience' },
+            { num: '1,000+', label: 'Projects Completed' },
             { num: '5★', label: 'Average Rating' },
             { num: '100%', label: 'Licensed & Insured' },
           ].map(({ num, label }) => (
@@ -635,13 +658,13 @@ function WhyChooseUs() {
           {WHY_ITEMS.map(({ title, desc }) => (
             <div
               key={title}
-              className="group border-l-2 border-gold-600/30 hover:border-gold-500 bg-ink-900/40 hover:bg-ink-900/80 pl-6 pr-5 py-6 transition-all duration-300"
+              className="group border-l-2 border-brand-600/30 hover:border-brand-500 bg-ink-900/40 hover:bg-ink-900/80 pl-6 pr-5 py-6 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-gold-400">
+                <span className="text-brand-400">
                   <CheckIcon />
                 </span>
-                <h3 className="font-heading text-warm-100 text-base tracking-wide group-hover:text-gold-300 transition-colors">
+                <h3 className="font-heading text-warm-100 text-base tracking-wide group-hover:text-brand-300 transition-colors">
                   {title}
                 </h3>
               </div>
@@ -685,7 +708,7 @@ function Gallery() {
           {GALLERY_ITEMS.map(({ label, cols, rows }) => (
             <div
               key={label}
-              className="group relative overflow-hidden border border-white/[0.05] bg-ink-800/60 hover:border-gold-500/40 transition-all duration-300 cursor-pointer"
+              className="group relative overflow-hidden border border-white/[0.05] bg-ink-800/60 hover:border-brand-500/40 transition-all duration-300 cursor-pointer"
               style={{
                 gridColumn: `span ${cols}`,
                 gridRow: `span ${rows}`,
@@ -712,7 +735,7 @@ function Gallery() {
                 <span className="font-heading text-warm-200 text-sm tracking-wide">{label}</span>
               </div>
               {/* Gold overlay on hover */}
-              <div className="absolute inset-0 bg-gold-500/0 group-hover:bg-gold-500/[0.06] transition-colors duration-300" />
+              <div className="absolute inset-0 bg-brand-500/0 group-hover:bg-brand-500/[0.06] transition-colors duration-300" />
             </div>
           ))}
         </div>
@@ -762,17 +785,17 @@ function Testimonials() {
           {TESTIMONIALS.map(({ name, location, text, stars }) => (
             <div
               key={name}
-              className="border border-white/[0.06] bg-ink-900/50 p-7 flex flex-col hover:border-gold-500/30 transition-colors duration-300 group"
+              className="border border-white/[0.06] bg-ink-900/50 p-7 flex flex-col hover:border-brand-500/30 transition-colors duration-300 group"
             >
               {/* Stars */}
-              <div className="flex gap-0.5 text-gold-400 mb-5">
+              <div className="flex gap-0.5 text-brand-400 mb-5">
                 {Array.from({ length: stars }).map((_, i) => (
                   <StarIcon key={i} />
                 ))}
               </div>
 
               {/* Opening quote mark */}
-              <div className="font-display text-6xl text-gold-600/40 leading-none mb-1 -mt-1">&ldquo;</div>
+              <div className="font-display text-6xl text-brand-600/40 leading-none mb-1 -mt-1">&ldquo;</div>
 
               {/* Quote text */}
               <p className="font-body text-warm-300 text-sm leading-relaxed italic flex-1">{text}</p>
@@ -837,8 +860,8 @@ function Contact() {
         {/* Header */}
         <div className="mb-14">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-px bg-gold-500" />
-            <span className="font-heading text-gold-400 text-xs tracking-[0.4em] uppercase">
+            <div className="w-8 h-px bg-brand-500" />
+            <span className="font-heading text-brand-400 text-xs tracking-[0.4em] uppercase">
               Get In Touch
             </span>
           </div>
@@ -865,7 +888,7 @@ function Contact() {
                   content: (
                     <a
                       href="tel:7185550100"
-                      className="font-body text-warm-200 text-lg hover:text-gold-400 transition-colors"
+                      className="font-body text-warm-200 text-lg hover:text-brand-400 transition-colors"
                     >
                       (718) 555-0100
                     </a>
@@ -877,7 +900,7 @@ function Contact() {
                   content: (
                     <a
                       href="mailto:info@jfcrenovations.com"
-                      className="font-body text-warm-200 hover:text-gold-400 transition-colors"
+                      className="font-body text-warm-200 hover:text-brand-400 transition-colors"
                     >
                       info@jfcrenovations.com
                     </a>
@@ -888,9 +911,9 @@ function Contact() {
                   label: 'Service Area',
                   content: (
                     <div className="font-body text-warm-300 text-sm leading-relaxed">
-                      Based in Woodside, Queens
+                      41-31 51st St, Apt. 4G<br />Woodside, Queens, NY
                       <br />
-                      <span className="text-warm-400/60">Serving all of NYC & the metro area</span>
+                      <span className="text-warm-400/60">Serving Queens, Manhattan, Brooklyn &amp; all NYC boroughs</span>
                     </div>
                   ),
                 },
@@ -909,7 +932,7 @@ function Contact() {
                 },
               ].map(({ icon, label, content }) => (
                 <div key={label} className="flex items-start gap-4">
-                  <div className="text-gold-400 mt-0.5 flex-shrink-0">{icon}</div>
+                  <div className="text-brand-400 mt-0.5 flex-shrink-0">{icon}</div>
                   <div>
                     <div className="font-heading text-warm-300/70 text-xs tracking-[0.3em] uppercase mb-1.5">
                       {label}
@@ -920,8 +943,8 @@ function Contact() {
               ))}
             </div>
 
-            <div className="mt-10 p-5 border border-gold-500/25 bg-gold-500/[0.04]">
-              <div className="font-heading text-gold-400 text-xs tracking-[0.3em] uppercase mb-2">
+            <div className="mt-10 p-5 border border-brand-500/25 bg-brand-500/[0.04]">
+              <div className="font-heading text-brand-400 text-xs tracking-[0.3em] uppercase mb-2">
                 Free Estimates
               </div>
               <p className="font-body text-warm-300 text-sm leading-relaxed">
@@ -934,8 +957,8 @@ function Contact() {
           {/* Form */}
           <div ref={rightRef}>
             {submitted ? (
-              <div className="border border-gold-500/30 bg-gold-500/[0.04] p-12 text-center flex flex-col items-center justify-center min-h-[480px]">
-                <div className="text-gold-400 mb-5">
+              <div className="border border-brand-500/30 bg-brand-500/[0.04] p-12 text-center flex flex-col items-center justify-center min-h-[480px]">
+                <div className="text-brand-400 mb-5">
                   <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="9 12 11 14 15 10" strokeWidth="2" />
@@ -998,7 +1021,7 @@ function Contact() {
                     value={form.service}
                     onChange={set('service')}
                     className="form-input"
-                    style={{ backgroundColor: '#0B0F1E' }}
+                    style={{ backgroundColor: '#1A1A1A' }}
                   >
                     <option value="">Select a service...</option>
                     <option value="kitchen">Kitchen Remodeling</option>
@@ -1032,7 +1055,7 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-gold-500 hover:bg-gold-400 disabled:bg-gold-700 disabled:cursor-not-allowed text-ink-900 py-4 font-heading text-sm tracking-[0.25em] uppercase transition-all hover:shadow-xl hover:shadow-gold-500/25"
+                  className="w-full bg-brand-500 hover:bg-brand-400 disabled:bg-brand-700 disabled:cursor-not-allowed text-ink-900 py-4 font-heading text-sm tracking-[0.25em] uppercase transition-all hover:shadow-xl hover:shadow-brand-500/25"
                 >
                   {submitting ? 'Sending...' : 'Request Free Estimate'}
                 </button>
@@ -1057,7 +1080,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Brand */}
           <div>
-            <div className="font-display text-2xl tracking-[0.15em] text-gold-400">
+            <div className="font-display text-2xl tracking-[0.15em] text-brand-400">
               JFC RENOVATIONS
             </div>
             <div className="font-body text-warm-400/50 text-xs mt-0.5">
@@ -1071,7 +1094,7 @@ function Footer() {
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="font-heading text-warm-400/50 hover:text-gold-400 text-xs tracking-[0.3em] uppercase transition-colors"
+                className="font-heading text-warm-400/50 hover:text-brand-400 text-xs tracking-[0.3em] uppercase transition-colors"
               >
                 {link}
               </a>

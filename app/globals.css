@@ -16,22 +16,22 @@
   }
 
   ::selection {
-    background-color: #C8922A;
-    color: #080C18;
+    background-color: #F97316;
+    color: #111111;
   }
 
   ::-webkit-scrollbar {
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #05080F;
+    background: #080808;
   }
   ::-webkit-scrollbar-thumb {
-    background: #C8922A;
+    background: #F97316;
     border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #E5B84F;
+    background: #FB923C;
   }
 }
 
@@ -158,16 +158,16 @@
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #C8922A;
+  background-color: #F97316;
   transition: width 0.3s ease;
 }
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Gold shimmer on section headings */
+/* Orange shimmer on section headings */
 .gold-shimmer {
-  background: linear-gradient(135deg, #C8922A 0%, #F5D580 40%, #C8922A 60%, #E5B84F 100%);
+  background: linear-gradient(135deg, #EA580C 0%, #FDBA74 40%, #EA580C 60%, #FB923C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -187,8 +187,8 @@
   -webkit-appearance: none;
 }
 .form-input:focus {
-  border-color: #C8922A;
-  box-shadow: 0 0 0 3px rgba(200, 146, 42, 0.12);
+  border-color: #F97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
 }
 .form-input::placeholder {
   color: rgba(242, 235, 217, 0.25);
