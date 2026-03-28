@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL
+const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL as string
 if (!N8N_WEBHOOK_URL) throw new Error('N8N_WEBHOOK_URL is not set')
 
 export async function POST(req: NextRequest) {
