@@ -529,12 +529,12 @@ function About() {
           {/* Image side */}
           <div ref={leftRef} className="relative">
             {/* Main image area */}
-            <div className="aspect-[9/20] bg-ink-800 relative overflow-hidden border border-white/[0.06]">
+            <div className="aspect-square bg-ink-800 relative overflow-hidden border border-white/[0.06]">
               <Image
                 src="/images/owner.jpg"
                 alt="JFC Pro-Renovations owner"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
                 priority
               />
               <div
@@ -750,7 +750,7 @@ function Gallery() {
                   src={src}
                   alt={label}
                   fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
                 <>
