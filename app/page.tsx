@@ -710,10 +710,10 @@ function WhyChooseUs() {
 
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
 const GALLERY_ITEMS = [
-  { label: 'Kitchen Remodel', cols: 2, rows: 2, src: '/images/kitchen-1.jpg' },
-  { label: 'Luxury Bathroom', cols: 1, rows: 2, src: '/images/bathroom-1.jpg' },
-  { label: 'Modern Kitchen', cols: 1, rows: 2, src: '/images/kitchen-2.jpg' },
-  { label: 'Kitchen Renovation', cols: 4, rows: 2, src: '/images/kitchen-3.jpg' },
+  { label: 'Kitchen Remodel', cols: 2, rows: 2, src: '/images/kitchen-1.jpg', contain: false },
+  { label: 'Luxury Bathroom', cols: 1, rows: 2, src: '/images/bathroom-1.jpg', contain: false },
+  { label: 'Modern Kitchen', cols: 1, rows: 2, src: '/images/kitchen-2.jpg', contain: true },
+  { label: 'Kitchen Renovation', cols: 4, rows: 2, src: '/images/kitchen-3.jpg', contain: false },
 ]
 
 function Gallery() {
@@ -732,7 +732,7 @@ function Gallery() {
           ref={gridRef}
           className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[220px]"
         >
-          {GALLERY_ITEMS.map(({ label, cols, rows, src }) => (
+          {GALLERY_ITEMS.map(({ label, cols, rows, src, contain }) => (
             <div
               key={label}
               className="group relative overflow-hidden border border-white/[0.05] bg-ink-800/60 hover:border-brand-500/40 transition-all duration-300 cursor-pointer"
@@ -746,7 +746,7 @@ function Gallery() {
                   src={src}
                   alt={label}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`${contain ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
                 />
               ) : (
                 <>
