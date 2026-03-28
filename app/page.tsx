@@ -938,10 +938,10 @@ function Contact() {
                   label: 'Email',
                   content: (
                     <a
-                      href="mailto:info@jfcrenovations.com"
+                      href="mailto:jfcprorenovations@gmail.com"
                       className="font-body text-warm-200 hover:text-brand-400 transition-colors"
                     >
-                      info@jfcrenovations.com
+                      jfcprorenovations@gmail.com
                     </a>
                   ),
                 },
