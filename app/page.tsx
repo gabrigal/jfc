@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, FormEvent, ReactNode } from 'react'
+import Image from 'next/image'
 
 // ─── Scroll-reveal hook ────────────────────────────────────────────────────────
 function useReveal(animClass = 'reveal', threshold = 0.12) {
@@ -529,25 +530,16 @@ function About() {
           <div ref={leftRef} className="relative">
             {/* Main image area */}
             <div className="aspect-[4/5] bg-ink-800 relative overflow-hidden border border-white/[0.06]">
-              {/* Subtle pattern in placeholder */}
-              <div
-                className="absolute inset-0 opacity-[0.04]"
-                style={{
-                  backgroundImage:
-                    'repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 0, transparent 56px), repeating-linear-gradient(90deg, #fff 0, #fff 1px, transparent 0, transparent 56px)',
-                }}
+              <Image
+                src="/images/owner.jpg"
+                alt="JFC Pro-Renovations owner"
+                fill
+                className="object-cover object-top"
+                priority
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-display text-[10rem] leading-none text-brand-600/15 select-none tracking-widest">
-                  JFC
-                </span>
-                <span className="font-heading text-warm-400/30 text-xs tracking-[0.4em] uppercase mt-2">
-                  Est. 2004
-                </span>
-              </div>
               <div
                 className="absolute inset-0"
-                style={{ background: 'linear-gradient(to top, #111111 0%, transparent 50%)' }}
+                style={{ background: 'linear-gradient(to top, #111111 0%, transparent 60%)' }}
               />
             </div>
 
@@ -718,14 +710,14 @@ function WhyChooseUs() {
 
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
 const GALLERY_ITEMS = [
-  { label: 'Kitchen Remodel', cols: 2, rows: 2 },
-  { label: 'Master Bathroom', cols: 1, rows: 1 },
-  { label: 'Basement Gym', cols: 1, rows: 1 },
-  { label: 'Hardwood Floors', cols: 1, rows: 1 },
-  { label: 'Home Addition', cols: 2, rows: 1 },
-  { label: 'Bathroom Tile Work', cols: 1, rows: 1 },
-  { label: 'Open Kitchen', cols: 1, rows: 1 },
-  { label: 'Exterior Paint', cols: 1, rows: 1 },
+  { label: 'Kitchen Remodel', cols: 2, rows: 2, src: '/images/kitchen-1.jpg' },
+  { label: 'Luxury Bathroom', cols: 1, rows: 1, src: '/images/bathroom-1.jpg' },
+  { label: 'Modern Kitchen', cols: 1, rows: 1, src: '/images/kitchen-2.jpg' },
+  { label: 'Kitchen Renovation', cols: 1, rows: 1, src: '/images/kitchen-3.jpg' },
+  { label: 'Home Addition', cols: 2, rows: 1, src: null },
+  { label: 'Bathroom Tile Work', cols: 1, rows: 1, src: null },
+  { label: 'Hardwood Floors', cols: 1, rows: 1, src: null },
+  { label: 'Exterior Paint', cols: 1, rows: 1, src: null },
 ]
 
 function Gallery() {
@@ -744,7 +736,7 @@ function Gallery() {
           ref={gridRef}
           className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[160px]"
         >
-          {GALLERY_ITEMS.map(({ label, cols, rows }) => (
+          {GALLERY_ITEMS.map(({ label, cols, rows, src }) => (
             <div
               key={label}
               className="group relative overflow-hidden border border-white/[0.05] bg-ink-800/60 hover:border-brand-500/40 transition-all duration-300 cursor-pointer"
@@ -753,20 +745,29 @@ function Gallery() {
                 gridRow: `span ${rows}`,
               }}
             >
-              {/* Grid pattern placeholder */}
-              <div
-                className="absolute inset-0 opacity-[0.04]"
-                style={{
-                  backgroundImage:
-                    'repeating-linear-gradient(0deg, #ccc 0, #ccc 1px, transparent 0, transparent 48px), repeating-linear-gradient(90deg, #ccc 0, #ccc 1px, transparent 0, transparent 48px)',
-                }}
-              />
-              {/* Center placeholder text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-heading text-warm-400/20 text-xs tracking-widest uppercase text-center px-3">
-                  {label}
-                </span>
-              </div>
+              {src ? (
+                <Image
+                  src={src}
+                  alt={label}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <>
+                  <div
+                    className="absolute inset-0 opacity-[0.04]"
+                    style={{
+                      backgroundImage:
+                        'repeating-linear-gradient(0deg, #ccc 0, #ccc 1px, transparent 0, transparent 48px), repeating-linear-gradient(90deg, #ccc 0, #ccc 1px, transparent 0, transparent 48px)',
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-heading text-warm-400/20 text-xs tracking-widest uppercase text-center px-3">
+                      {label}
+                    </span>
+                  </div>
+                </>
+              )}
               {/* Hover reveal label */}
               <div className="absolute bottom-0 left-0 right-0 p-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                 style={{ background: 'linear-gradient(to top, rgba(8,12,24,0.95), transparent)' }}
