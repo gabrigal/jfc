@@ -711,9 +711,9 @@ function WhyChooseUs() {
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
 const GALLERY_ITEMS = [
   { label: 'Kitchen Remodel', cols: 2, rows: 2, src: '/images/kitchen-1.jpg' },
-  { label: 'Luxury Bathroom', cols: 1, rows: 1, src: '/images/bathroom-1.jpg' },
-  { label: 'Modern Kitchen', cols: 1, rows: 1, src: '/images/kitchen-2.jpg' },
-  { label: 'Kitchen Renovation', cols: 1, rows: 1, src: '/images/kitchen-3.jpg' },
+  { label: 'Luxury Bathroom', cols: 1, rows: 2, src: '/images/bathroom-1.jpg' },
+  { label: 'Modern Kitchen', cols: 1, rows: 2, src: '/images/kitchen-2.jpg' },
+  { label: 'Kitchen Renovation', cols: 4, rows: 2, src: '/images/kitchen-3.jpg' },
 ]
 
 function Gallery() {
