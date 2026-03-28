@@ -709,15 +709,30 @@ function WhyChooseUs() {
 }
 
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
-const GALLERY_ITEMS = [
-  { label: 'Luxury Bathroom', cols: 1, rows: 2, src: '/images/bathroom-1.jpg', contain: false },
-  { label: 'Kitchen Renovation', cols: 2, rows: 1, src: '/images/kitchen-3.jpg', contain: false },
-  { label: 'Modern Kitchen', cols: 1, rows: 1, src: '/images/kitchen-2.jpg', contain: true },
-  { label: 'Kitchen Remodel', cols: 1, rows: 1, src: '/images/kitchen-1.jpg', contain: true },
-]
+function GalleryPhoto({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
+  return (
+    <div className="group relative overflow-hidden border border-white/[0.05] hover:border-brand-500/40 transition-all duration-300 cursor-pointer">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+        className="group-hover:scale-105 transition-transform duration-500"
+      />
+      <div
+        className="absolute bottom-0 left-0 right-0 p-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+        style={{ background: 'linear-gradient(to top, rgba(8,12,24,0.95), transparent)' }}
+      >
+        <span className="font-heading text-warm-200 text-sm tracking-wide">{alt}</span>
+      </div>
+      <div className="absolute inset-0 bg-brand-500/0 group-hover:bg-brand-500/[0.06] transition-colors duration-300" />
+    </div>
+  )
+}
 
 function Gallery() {
-  const gridRef = useStaggerReveal(GALLERY_ITEMS.length, 60)
+  const gridRef = useStaggerReveal(2, 60)
 
   return (
     <section id="gallery" className="py-24 bg-ink-900 texture-overlay">
@@ -728,52 +743,24 @@ function Gallery() {
           sub="A selection of completed projects across Queens and the greater NYC area."
         />
 
-        <div
-          ref={gridRef}
-          className="grid grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[220px]"
-        >
-          {GALLERY_ITEMS.map(({ label, cols, rows, src, contain }) => (
-            <div
-              key={label}
-              className="group relative overflow-hidden border border-white/[0.05] bg-ink-800/60 hover:border-brand-500/40 transition-all duration-300 cursor-pointer"
-              style={{
-                gridColumn: `span ${cols}`,
-                gridRow: `span ${rows}`,
-              }}
-            >
-              {src ? (
-                <Image
-                  src={src}
-                  alt={label}
-                  fill
-                  className={`${contain ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
-                />
-              ) : (
-                <>
-                  <div
-                    className="absolute inset-0 opacity-[0.04]"
-                    style={{
-                      backgroundImage:
-                        'repeating-linear-gradient(0deg, #ccc 0, #ccc 1px, transparent 0, transparent 48px), repeating-linear-gradient(90deg, #ccc 0, #ccc 1px, transparent 0, transparent 48px)',
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-heading text-warm-400/20 text-xs tracking-widest uppercase text-center px-3">
-                      {label}
-                    </span>
-                  </div>
-                </>
-              )}
-              {/* Hover reveal label */}
-              <div className="absolute bottom-0 left-0 right-0 p-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                style={{ background: 'linear-gradient(to top, rgba(8,12,24,0.95), transparent)' }}
-              >
-                <span className="font-heading text-warm-200 text-sm tracking-wide">{label}</span>
+        <div ref={gridRef} className="flex gap-3">
+          {/* Left column: bathroom portrait */}
+          <div className="w-1/3 shrink-0">
+            <GalleryPhoto src="/images/bathroom-1.jpg" alt="Luxury Bathroom" width={1536} height={2048} />
+          </div>
+
+          {/* Right column: kitchens */}
+          <div className="flex-1 flex flex-col gap-3">
+            <GalleryPhoto src="/images/kitchen-3.jpg" alt="Kitchen Renovation" width={1600} height={1200} />
+            <div className="flex gap-3">
+              <div className="w-1/2">
+                <GalleryPhoto src="/images/kitchen-2.jpg" alt="Modern Kitchen" width={1600} height={1200} />
               </div>
-              {/* Gold overlay on hover */}
-              <div className="absolute inset-0 bg-brand-500/0 group-hover:bg-brand-500/[0.06] transition-colors duration-300" />
+              <div className="w-1/2">
+                <GalleryPhoto src="/images/kitchen-1.jpg" alt="Kitchen Remodel" width={2048} height={1536} />
+              </div>
             </div>
-          ))}
+          </div>
         </div>
 
         <p className="text-center font-body text-warm-400/50 text-sm italic mt-6">
