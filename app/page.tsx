@@ -713,7 +713,7 @@ const GALLERY_ITEMS = [
   { label: 'Luxury Bathroom', cols: 1, rows: 2, src: '/images/bathroom-1.jpg', contain: false },
   { label: 'Kitchen Renovation', cols: 2, rows: 1, src: '/images/kitchen-3.jpg', contain: false },
   { label: 'Modern Kitchen', cols: 1, rows: 1, src: '/images/kitchen-2.jpg', contain: true },
-  { label: 'Kitchen Remodel', cols: 3, rows: 1, src: '/images/kitchen-1.jpg', contain: false },
+  { label: 'Kitchen Remodel', cols: 1, rows: 1, src: '/images/kitchen-1.jpg', contain: true },
 ]
 
 function Gallery() {
@@ -730,7 +730,7 @@ function Gallery() {
 
         <div
           ref={gridRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[220px]"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[220px]"
         >
           {GALLERY_ITEMS.map(({ label, cols, rows, src, contain }) => (
             <div
