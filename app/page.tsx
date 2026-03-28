@@ -235,8 +235,8 @@ function Nav() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="bg-brand-500 group-hover:bg-brand-400 transition-colors px-2.5 py-1.5 flex items-center justify-center">
-            <span className="font-display text-[1.55rem] leading-none tracking-[0.06em] text-white">
+          <div className="bg-brand-500 group-hover:bg-brand-400 transition-colors px-1.5 py-1 flex items-center justify-center">
+            <span className="font-display text-[2rem] leading-none tracking-[0.04em] text-white">
               JFC
             </span>
           </div>
