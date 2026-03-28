@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: '#080808',
-          900: '#111111',
-          800: '#1A1A1A',
-          700: '#222222',
-          600: '#2D2D2D',
+          950: 'rgb(var(--ink-950) / <alpha-value>)',
+          900: 'rgb(var(--ink-900) / <alpha-value>)',
+          800: 'rgb(var(--ink-800) / <alpha-value>)',
+          700: 'rgb(var(--ink-700) / <alpha-value>)',
+          600: 'rgb(var(--ink-600) / <alpha-value>)',
         },
         brand: {
           300: '#FDBA74',
@@ -24,11 +24,11 @@ const config: Config = {
           700: '#C2410C',
         },
         warm: {
-          50: '#FAFAFA',
-          100: '#FFFFFF',
-          200: '#F5F5F5',
-          300: '#E0E0E0',
-          400: '#A3A3A3',
+          50: 'rgb(var(--warm-50) / <alpha-value>)',
+          100: 'rgb(var(--warm-100) / <alpha-value>)',
+          200: 'rgb(var(--warm-200) / <alpha-value>)',
+          300: 'rgb(var(--warm-300) / <alpha-value>)',
+          400: 'rgb(var(--warm-400) / <alpha-value>)',
         },
       },
       fontFamily: {

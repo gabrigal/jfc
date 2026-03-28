@@ -2,17 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Light mode (default) ───────────────────────────────────────────────────── */
+:root {
+  --ink-950: 255 255 255;
+  --ink-900: 250 250 250;
+  --ink-800: 240 240 240;
+  --ink-700: 229 229 229;
+  --ink-600: 212 212 212;
+  --warm-50:  10  10  10;
+  --warm-100:  15  15  15;
+  --warm-200:  38  38  38;
+  --warm-300:  82  82  82;
+  --warm-400: 115 115 115;
+  --body-bg: #FAFAFA;
+  --body-text: #111111;
+  --form-bg: rgba(240, 240, 240, 0.9);
+  --form-border: rgba(0, 0, 0, 0.12);
+  --form-text: #111111;
+  --form-placeholder: rgba(0, 0, 0, 0.3);
+  --scrollbar-track: #E5E5E5;
+}
+
+/* ── Dark mode ──────────────────────────────────────────────────────────────── */
+.dark {
+  --ink-950:   8   8   8;
+  --ink-900:  17  17  17;
+  --ink-800:  26  26  26;
+  --ink-700:  34  34  34;
+  --ink-600:  45  45  45;
+  --warm-50: 250 250 250;
+  --warm-100: 255 255 255;
+  --warm-200: 245 245 245;
+  --warm-300: 224 224 224;
+  --warm-400: 163 163 163;
+  --body-bg: #111111;
+  --body-text: #F2EBD9;
+  --form-bg: rgba(11, 15, 30, 0.8);
+  --form-border: rgba(255, 255, 255, 0.08);
+  --form-text: #F2EBD9;
+  --form-placeholder: rgba(242, 235, 217, 0.25);
+  --scrollbar-track: #080808;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    background-color: #080C18;
-    color: #F2EBD9;
+    background-color: var(--body-bg);
+    color: var(--body-text);
     font-family: 'Source Serif 4', Georgia, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
@@ -24,7 +67,7 @@
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #080808;
+    background: var(--scrollbar-track);
   }
   ::-webkit-scrollbar-thumb {
     background: #F97316;
@@ -176,9 +219,9 @@
 /* Form inputs base style */
 .form-input {
   width: 100%;
-  background-color: rgba(11, 15, 30, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #F2EBD9;
+  background-color: var(--form-bg);
+  border: 1px solid var(--form-border);
+  color: var(--form-text);
   padding: 0.875rem 1rem;
   font-family: 'Source Serif 4', Georgia, serif;
   font-size: 0.9rem;
@@ -191,7 +234,7 @@
   box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
 }
 .form-input::placeholder {
-  color: rgba(242, 235, 217, 0.25);
+  color: var(--form-placeholder);
 }
 
 /* Stagger delay helpers */
