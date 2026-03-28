@@ -788,73 +788,6 @@ function Gallery() {
   )
 }
 
-// ─── TESTIMONIALS ─────────────────────────────────────────────────────────────
-const TESTIMONIALS = [
-  {
-    name: 'Maria Gonzalez',
-    location: 'Woodside, Queens',
-    text: "JFC completely transformed our kitchen. They were professional from day one, always showed up on time, and the quality of the work was outstanding. Our kitchen looks like it belongs in a magazine. Couldn't be happier.",
-    stars: 5,
-  },
-  {
-    name: 'Patrick Sullivan',
-    location: 'Sunnyside, Queens',
-    text: 'They finished our basement ahead of schedule and under budget. The team was respectful, clean, and the craftsmanship is top notch. My family uses the space every day. Will absolutely use JFC again.',
-    stars: 5,
-  },
-  {
-    name: 'Jennifer & Tom Kim',
-    location: 'Jackson Heights, Queens',
-    text: 'We got four estimates and JFC was the most thorough and honest. Our bathroom renovation came out beautifully — they turned a tiny NYC bathroom into something truly luxurious. Highly recommend.',
-    stars: 5,
-  },
-]
-
-function Testimonials() {
-  const gridRef = useStaggerReveal(TESTIMONIALS.length, 130)
-
-  return (
-    <section className="py-24 bg-ink-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <SectionHeader
-          eyebrow="Client Stories"
-          headline={<>WHAT OUR<br />CLIENTS SAY</>}
-        />
-
-        <div ref={gridRef} className="grid md:grid-cols-3 gap-5">
-          {TESTIMONIALS.map(({ name, location, text, stars }) => (
-            <div
-              key={name}
-              className="border border-white/[0.06] bg-ink-900/50 p-7 flex flex-col hover:border-brand-500/30 transition-colors duration-300 group"
-            >
-              {/* Stars */}
-              <div className="flex gap-0.5 text-brand-400 mb-5">
-                {Array.from({ length: stars }).map((_, i) => (
-                  <StarIcon key={i} />
-                ))}
-              </div>
-
-              {/* Opening quote mark */}
-              <div className="font-display text-6xl text-brand-600/40 leading-none mb-1 -mt-1">&ldquo;</div>
-
-              {/* Quote text */}
-              <p className="font-body text-warm-300 text-sm leading-relaxed italic flex-1">{text}</p>
-
-              {/* Attribution */}
-              <div className="mt-6 pt-5 border-t border-white/[0.06]">
-                <div className="font-heading text-warm-100 text-sm tracking-wide">{name}</div>
-                <div className="flex items-center gap-1.5 text-warm-400/60 text-xs font-body mt-0.5">
-                  <MapPinIcon />
-                  {location}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 // ─── CONTACT ──────────────────────────────────────────────────────────────────
 function Contact() {
@@ -1166,7 +1099,6 @@ export default function Home() {
       <StatsBand />
       <WhyChooseUs />
       <Gallery />
-      <Testimonials />
       <Contact />
       <Footer />
     </main>
