@@ -714,10 +714,6 @@ const GALLERY_ITEMS = [
   { label: 'Luxury Bathroom', cols: 1, rows: 1, src: '/images/bathroom-1.jpg' },
   { label: 'Modern Kitchen', cols: 1, rows: 1, src: '/images/kitchen-2.jpg' },
   { label: 'Kitchen Renovation', cols: 1, rows: 1, src: '/images/kitchen-3.jpg' },
-  { label: 'Home Addition', cols: 2, rows: 1, src: null },
-  { label: 'Bathroom Tile Work', cols: 1, rows: 1, src: null },
-  { label: 'Hardwood Floors', cols: 1, rows: 1, src: null },
-  { label: 'Exterior Paint', cols: 1, rows: 1, src: null },
 ]
 
 function Gallery() {
