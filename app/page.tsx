@@ -525,9 +525,9 @@ function About() {
   return (
     <section id="about" className="py-24 bg-ink-900 texture-overlay">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
           {/* Image side */}
-          <div ref={leftRef} className="relative">
+          <div ref={leftRef} className="relative max-w-xs mx-auto lg:mx-0">
             {/* Main image area */}
             <div className="aspect-square bg-ink-800 relative overflow-hidden border border-white/[0.06]">
               <Image
