@@ -525,11 +525,11 @@ function About() {
   return (
     <section id="about" className="py-24 bg-ink-900 texture-overlay">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
           {/* Image side */}
-          <div ref={leftRef} className="relative max-w-xs mx-auto lg:mx-0">
+          <div ref={leftRef} className="relative">
             {/* Main image area */}
-            <div className="aspect-square bg-ink-800 relative overflow-hidden border border-white/[0.06]">
+            <div className="aspect-[4/5] bg-ink-800 relative overflow-hidden border border-white/[0.06]">
               <Image
                 src="/images/owner.jpg"
                 alt="JFC Pro-Renovations owner"
