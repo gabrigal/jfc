@@ -34,7 +34,7 @@ const config: Config = {
       fontFamily: {
         display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
         heading: ['"Fjalla One"', 'Arial Narrow', 'sans-serif'],
-        body: ['"Source Serif 4"', 'Georgia', 'serif'],
+        body: ['"Jost"', 'Futura', 'Century Gothic', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards',
