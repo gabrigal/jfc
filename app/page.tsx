@@ -235,18 +235,17 @@ function Nav() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="flex flex-col">
-            <span className="font-display text-[1.7rem] leading-none tracking-[0.12em] text-brand-400 group-hover:text-brand-300 transition-colors">
+          <div className="bg-brand-500 group-hover:bg-brand-400 transition-colors px-2.5 py-1.5 flex items-center justify-center">
+            <span className="font-display text-[1.55rem] leading-none tracking-[0.06em] text-white">
               JFC
             </span>
           </div>
-          <div className="w-px h-8 bg-brand-600/40" />
           <div className="flex flex-col">
             <span className="font-heading text-[0.65rem] tracking-[0.35em] text-warm-300 uppercase leading-tight">
-              Renovations
+              Pro-Renovations Inc.
             </span>
-            <span className="font-heading text-[0.55rem] tracking-[0.2em] text-warm-400/60 uppercase leading-tight">
-              Woodside, Queens
+            <span className="font-heading text-[0.5rem] tracking-[0.2em] text-warm-400/60 uppercase leading-tight">
+              Home &amp; Office Improvement
             </span>
           </div>
         </a>
