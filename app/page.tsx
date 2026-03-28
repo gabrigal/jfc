@@ -340,7 +340,7 @@ function Hero() {
                 BUILT TO
               </div>
               <div
-                className="hero-line font-display text-[clamp(4.5rem,12vw,9.5rem)] leading-[0.88] text-warm-100 tracking-[0.01em]"
+                className="hero-line font-display text-[clamp(4.5rem,12vw,9.5rem)] leading-[0.88] gold-shimmer tracking-[0.01em]"
                 style={{ animationDelay: '0.72s' }}
               >
                 LAST.
