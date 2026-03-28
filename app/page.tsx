@@ -679,7 +679,7 @@ const WHY_ITEMS = [
   },
   {
     title: 'Satisfaction Guaranteed',
-    desc: 'Every project comes with a written warranty. We don&apos;t consider a job done until you love it.',
+    desc: "Every project comes with a written warranty — we don't consider a job done until you love it.",
   },
 ]
 
