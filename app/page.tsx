@@ -275,11 +275,11 @@ function Nav() {
 
         {/* CTA */}
         <a
-          href="tel:7185550100"
+          href="tel:3479707467"
           className="hidden md:flex items-center gap-2.5 bg-brand-500 hover:bg-brand-400 text-ink-900 px-5 py-2.5 font-heading text-xs tracking-[0.2em] uppercase transition-all hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-px"
         >
           <PhoneIcon />
-          <span>(718) 555-0100</span>
+          <span>(347) 970-7467</span>
         </a>
 
         {/* Mobile toggle */}
@@ -309,8 +309,8 @@ function Nav() {
               {label}
             </a>
           ))}
-          <a href="tel:7185550100" className="flex items-center gap-2 text-brand-400 font-heading text-sm mt-2">
-            <PhoneIcon /> (718) 555-0100
+          <a href="tel:3479707467" className="flex items-center gap-2 text-brand-400 font-heading text-sm mt-2">
+            <PhoneIcon /> (347) 970-7467
           </a>
           <button
             onClick={toggleTheme}
@@ -801,7 +801,7 @@ function Contact() {
       if (!res.ok) throw new Error('Failed')
       setSubmitted(true)
     } catch {
-      setError('Something went wrong. Please call us directly at (718) 555-0100.')
+      setError('Something went wrong. Please call us directly at (347) 970-7467.')
     } finally {
       setSubmitting(false)
     }
@@ -843,10 +843,10 @@ function Contact() {
                   label: 'Phone',
                   content: (
                     <a
-                      href="tel:7185550100"
+                      href="tel:3479707467"
                       className="font-body text-warm-200 text-lg hover:text-brand-400 transition-colors"
                     >
-                      (718) 555-0100
+                      (347) 970-7467
                     </a>
                   ),
                 },
