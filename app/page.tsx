@@ -878,11 +878,9 @@ function Contact() {
                   label: 'Hours',
                   content: (
                     <div className="font-body text-warm-300 text-sm leading-relaxed">
-                      Mon – Fri: 7:00 AM – 6:00 PM
+                      Mon – Fri: 8:00 AM – 5:00 PM
                       <br />
-                      Saturday: 8:00 AM – 4:00 PM
-                      <br />
-                      <span className="text-warm-400/60">Sunday: By appointment</span>
+                      <span className="text-warm-400/60">Saturday – Sunday: Closed</span>
                     </div>
                   ),
                 },
