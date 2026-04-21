@@ -388,8 +388,8 @@ function Hero() {
             </div>
 
             <p className="hero-body font-body text-warm-300 text-lg leading-relaxed max-w-lg">
-              JFC Renovations delivers expert craftsmanship across Queens, Manhattan, Brooklyn, and
-              all NYC boroughs — residential &amp; commercial, small and large. Every project, done right.
+              JFC Pro-Renovations delivers expert craftsmanship across all NYC 5 Boroughs —
+              residential &amp; commercial, small and large. Every project, done right.
             </p>
 
             <div className="hero-cta flex flex-wrap gap-4 mt-9">
@@ -492,7 +492,7 @@ function Services() {
         <SectionHeader
           eyebrow="What We Do"
           headline={<>OUR<br />SERVICES</>}
-          sub="Residential & commercial renovation work across Queens, Manhattan, Brooklyn and all NYC boroughs — small jobs and large, done right."
+          sub="Residential & commercial renovation work across all NYC 5 Boroughs — small jobs and large, done right."
         />
 
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -574,8 +574,7 @@ function About() {
 
             <div className="space-y-4 font-body text-warm-400 leading-relaxed">
               <p>
-                JFC Renovations has been transforming homes and businesses across Queens, Manhattan, Brooklyn,
-                and all of NYC since 2007. Over 1,000 completed projects — residential and commercial — built
+                JFC Pro-Renovations has been transforming homes and businesses across all NYC 5 Boroughs since 2007. Over 1,000 completed projects — residential and commercial — built
                 on honest work and exceptional craftsmanship.
               </p>
               <p>
@@ -658,7 +657,7 @@ const WHY_ITEMS = [
   },
   {
     title: 'Local Expertise',
-    desc: 'Queens-born and raised. We know NYC homes — the quirks, the codes, and how to do it right.',
+    desc: 'We know NYC homes — the quirks, the codes, and how to do it right.',
   },
   {
     title: 'Quality Materials',
@@ -708,31 +707,137 @@ function WhyChooseUs() {
   )
 }
 
-// ─── GALLERY ─────────────────────────────────────────────────────────────────
-function GalleryPhoto({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
+// ─── REVIEWS ──────────────────────────────────────────────────────────────────
+const REVIEWS = [
+  {
+    name: 'Rene Obando',
+    meta: 'Local Guide · 223 reviews',
+    date: '18 hours ago',
+    stars: 5,
+    text: 'I had the pleasure of working with JFC since 2012, Francisco & his Team have been together with me through different projects & clients. I am a former Architect & Interior Designer, building 23 high end hotels in Manhattan, & I can say that it is not easy to find an experienced, skilled, resourceful Construction Professional like Francisco. If you need to complete a job on time, on schedule and for a very reasonable budget Francisco is the person you are looking for. WAY TO GO JFC PRO RENOVATIONS!!!',
+  },
+  {
+    name: 'Liliana Nunez',
+    meta: '1 review',
+    date: '4 days ago',
+    stars: 5,
+    text: 'Mr. Calle remodeled my bathroom almost 20 years ago and it still standing. Not a single tile has come loose. All accessories still in place, no leaks or water filtrations at all.',
+  },
+  {
+    name: 'Nirmala Sookiram',
+    meta: '6 reviews · 18 photos',
+    date: '5 days ago',
+    stars: 5,
+    text: 'Highly recommend this company. They worked on my kitchen, bathroom, bedroom and office. They did an amazing job on the flooring, wallpaper, murals, and painting. Their expertise and skills are exceptional.',
+  },
+  {
+    name: 'Hector Andrade',
+    meta: '6 reviews · 1 photo',
+    date: 'a week ago',
+    stars: 5,
+    text: 'We hired JFC Pro Renovations for a hardwood floor replacement and a partial apartment renovation. The project was completed on time, within budget, and to a high standard. As an architect, I especially appreciated the clear communication and their ability to accurately execute the project, as reflected in the final result.',
+  },
+  {
+    name: 'Rachel Cavaliere',
+    meta: '3 reviews',
+    date: 'a week ago',
+    stars: 5,
+    text: 'I recently had work done in my basement, it turned out amazing the staff is very professional I highly recommend them.',
+  },
+]
+
+function Reviews() {
+  const gridRef = useStaggerReveal(REVIEWS.length, 90)
+
   return (
-    <div className="group relative overflow-hidden border border-white/[0.05] hover:border-brand-500/40 transition-all duration-300 cursor-pointer">
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        style={{ width: '100%', height: 'auto', display: 'block' }}
-        className="group-hover:scale-105 transition-transform duration-500"
-      />
-      <div
-        className="absolute bottom-0 left-0 right-0 p-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-        style={{ background: 'linear-gradient(to top, rgba(8,12,24,0.95), transparent)' }}
-      >
-        <span className="font-heading text-warm-200 text-sm tracking-wide">{alt}</span>
+    <section className="py-24 bg-ink-900 texture-overlay">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeader
+          eyebrow="Google Reviews"
+          headline={<>WHAT CLIENTS<br />SAY</>}
+          sub="Real reviews from real customers — verified on Google."
+        />
+
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {REVIEWS.map(({ name, meta, date, stars, text }) => (
+            <div
+              key={name}
+              className="border border-white/[0.06] bg-ink-800/60 p-7 flex flex-col gap-4 hover:border-brand-500/30 transition-colors duration-300"
+            >
+              {/* Stars */}
+              <div className="flex gap-1">
+                {Array.from({ length: stars }).map((_, i) => (
+                  <span key={i} className="text-brand-400">
+                    <StarIcon />
+                  </span>
+                ))}
+              </div>
+
+              {/* Review text */}
+              <p className="font-body text-warm-300 text-sm leading-relaxed flex-1">&ldquo;{text}&rdquo;</p>
+
+              {/* Reviewer */}
+              <div className="border-t border-white/[0.06] pt-4">
+                <div className="font-heading text-warm-100 text-sm tracking-wide">{name}</div>
+                <div className="font-body text-warm-400/60 text-xs mt-0.5">{meta} · {date}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Google badge */}
+        <div className="mt-10 flex items-center justify-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <span className="font-body text-warm-400/50 text-xs tracking-wide">Reviews from Google</span>
+        </div>
       </div>
-      <div className="absolute inset-0 bg-brand-500/0 group-hover:bg-brand-500/[0.06] transition-colors duration-300" />
-    </div>
+    </section>
   )
 }
 
+// ─── GALLERY ─────────────────────────────────────────────────────────────────
+const GALLERY_PHOTOS = [
+  { src: '/images/bathroom-1.jpg', alt: 'Luxury Master Bathroom' },
+  { src: '/images/kitchen-dark-2.jpg', alt: 'Espresso Kitchen Renovation' },
+  { src: '/images/kitchen-1.jpg', alt: 'Cherry Kitchen Remodel' },
+  { src: '/images/bathroom-gray.jpg', alt: 'Gray Tile Bathroom' },
+  { src: '/images/kitchen-wood.jpg', alt: 'Kitchen & Flooring Renovation' },
+  { src: '/images/bathroom-mosaic.jpg', alt: 'Custom Mosaic Bathroom' },
+  { src: '/images/kitchen-2.jpg', alt: 'Modern Kitchen' },
+  { src: '/images/flooring-room.jpg', alt: 'Luxury Vinyl Plank Flooring' },
+  { src: '/images/kitchen-3.jpg', alt: 'Kitchen Renovation' },
+  { src: '/images/bathroom-tile.jpg', alt: 'Bathroom Tile Work' },
+  { src: '/images/kitchen-dark-1.jpg', alt: 'Dark Kitchen with Red Quartz' },
+]
+
 function Gallery() {
-  const gridRef = useStaggerReveal(2, 60)
+  const gridRef = useStaggerReveal(GALLERY_PHOTOS.length, 60)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const total = GALLERY_PHOTOS.length
+
+  const close = () => setLightboxIndex(null)
+  const prev = () => setLightboxIndex((i) => (i === null ? 0 : (i - 1 + total) % total))
+  const next = () => setLightboxIndex((i) => (i === null ? 0 : (i + 1) % total))
+
+  useEffect(() => {
+    if (lightboxIndex === null) return
+    document.body.style.overflow = 'hidden'
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') close()
+      if (e.key === 'ArrowLeft') prev()
+      if (e.key === 'ArrowRight') next()
+    }
+    window.addEventListener('keydown', handler)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handler)
+    }
+  }, [lightboxIndex])
 
   return (
     <section id="gallery" className="py-24 bg-ink-900 texture-overlay">
@@ -743,30 +848,92 @@ function Gallery() {
           sub="A selection of completed projects across Queens and the greater NYC area."
         />
 
-        <div ref={gridRef} className="flex gap-3">
-          {/* Left column: bathroom portrait */}
-          <div className="w-1/3 shrink-0">
-            <GalleryPhoto src="/images/bathroom-1.jpg" alt="Luxury Bathroom" width={1536} height={2048} />
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {GALLERY_PHOTOS.map(({ src, alt }, i) => (
+            <button
+              key={src}
+              onClick={() => setLightboxIndex(i)}
+              className="group relative overflow-hidden border border-white/[0.05] hover:border-brand-500/40 transition-all duration-300 cursor-pointer text-left w-full"
+              aria-label={`View ${alt}`}
+            >
+              <div className="relative w-full h-64 md:h-72">
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div
+                className="absolute bottom-0 left-0 right-0 p-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                style={{ background: 'linear-gradient(to top, rgba(8,12,24,0.95), transparent)' }}
+              >
+                <span className="font-heading text-warm-200 text-sm tracking-wide">{alt}</span>
+              </div>
+              <div className="absolute inset-0 bg-brand-500/0 group-hover:bg-brand-500/[0.06] transition-colors duration-300" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {lightboxIndex !== null && (
+        <div
+          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.93)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          onClick={close}
+        >
+          {/* Close */}
+          <button
+            onClick={close}
+            style={{ position: 'absolute', top: 16, right: 16, color: '#fff', background: 'none', border: 'none', cursor: 'pointer', padding: 8, zIndex: 1 }}
+            aria-label="Close"
+          >
+            <XIcon />
+          </button>
+
+          {/* Counter */}
+          <div style={{ position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)', color: '#aaa', fontSize: 12, letterSpacing: '0.3em', fontFamily: 'inherit' }}>
+            {lightboxIndex + 1} / {total}
           </div>
 
-          {/* Right column: kitchens */}
-          <div className="flex-1 flex flex-col gap-3">
-            <GalleryPhoto src="/images/kitchen-3.jpg" alt="Kitchen Renovation" width={1600} height={1200} />
-            <div className="flex gap-3">
-              <div className="w-1/2">
-                <GalleryPhoto src="/images/kitchen-2.jpg" alt="Modern Kitchen" width={1600} height={1200} />
-              </div>
-              <div className="w-1/2">
-                <GalleryPhoto src="/images/kitchen-1.jpg" alt="Kitchen Remodel" width={2048} height={1536} />
-              </div>
+          {/* Prev */}
+          <button
+            onClick={(e) => { e.stopPropagation(); prev() }}
+            style={{ position: 'absolute', left: 12, color: '#fff', background: 'none', border: 'none', cursor: 'pointer', padding: 12, zIndex: 1 }}
+            aria-label="Previous"
+          >
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          {/* Image */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: '90vw', maxHeight: '85vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={GALLERY_PHOTOS[lightboxIndex].src}
+              alt={GALLERY_PHOTOS[lightboxIndex].alt}
+              style={{ maxWidth: '90vw', maxHeight: '78vh', objectFit: 'contain', display: 'block' }}
+            />
+            <div style={{ marginTop: 12, color: '#ccc', fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase', fontFamily: 'inherit' }}>
+              {GALLERY_PHOTOS[lightboxIndex].alt}
             </div>
           </div>
-        </div>
 
-        <p className="text-center font-body text-warm-400/50 text-sm italic mt-6">
-          Portfolio photos coming soon — contact us to request project examples and references.
-        </p>
-      </div>
+          {/* Next */}
+          <button
+            onClick={(e) => { e.stopPropagation(); next() }}
+            style={{ position: 'absolute', right: 12, color: '#fff', background: 'none', border: 'none', cursor: 'pointer', padding: 12, zIndex: 1 }}
+            aria-label="Next"
+          >
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+      )}
     </section>
   )
 }
@@ -867,9 +1034,9 @@ function Contact() {
                   label: 'Service Area',
                   content: (
                     <div className="font-body text-warm-300 text-sm leading-relaxed">
-                      41-31 51st St, Apt. 4G<br />Woodside, Queens, NY
+                      Woodside, Queens, NY
                       <br />
-                      <span className="text-warm-400/60">Serving Queens, Manhattan, Brooklyn &amp; all NYC boroughs</span>
+                      <span className="text-warm-400/60">Serving all NYC 5 Boroughs</span>
                     </div>
                   ),
                 },
@@ -1035,7 +1202,7 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="font-display text-2xl tracking-[0.15em] text-brand-400">
-              JFC RENOVATIONS
+              JFC PRO-RENOVATIONS
             </div>
             <div className="font-body text-warm-400/50 text-xs mt-0.5">
               Woodside, Queens, New York
@@ -1058,7 +1225,7 @@ function Footer() {
           {/* Legal */}
           <div className="text-center md:text-right">
             <p className="font-body text-warm-400/35 text-xs leading-relaxed">
-              &copy; {new Date().getFullYear()} JFC Renovations.
+              &copy; {new Date().getFullYear()} JFC Pro-Renovations.
               <br />
               Licensed &amp; Insured · New York State
             </p>
@@ -1079,6 +1246,7 @@ export default function Home() {
       <About />
       <StatsBand />
       <WhyChooseUs />
+      <Reviews />
       <Gallery />
       <Contact />
       <Footer />
