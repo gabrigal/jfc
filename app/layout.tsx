@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'JFC Renovations | Licensed Contractor — Woodside, Queens NY',
+  title: 'JFC Pro-Renovations | Licensed Contractor — Woodside, Queens NY',
   description:
     'JFC Renovations is a fully licensed and insured contractor based in Woodside, Queens. Specializing in kitchen remodeling, bathroom renovation, basement finishing, home additions, flooring, and painting. Serving all of NYC.',
   keywords: 'contractor Queens NY, kitchen remodeling Queens, bathroom renovation Woodside, home renovation NYC, basement finishing Queens',

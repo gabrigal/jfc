@@ -388,7 +388,7 @@ function Hero() {
             </div>
 
             <p className="hero-body font-body text-warm-300 text-lg leading-relaxed max-w-lg">
-              JFC Pro-Renovations delivers expert craftsmanship across all NYC 5 Boroughs —
+              JFC Pro-Renovations delivers expert craftsmanship across all of New York City's 5 boroughs —
               residential &amp; commercial, small and large. Every project, done right.
             </p>
 
@@ -444,7 +444,7 @@ const SERVICES = [
   {
     icon: <KitchenSvg />,
     title: 'Kitchen Renovations',
-    desc: 'Complete kitchen transformations — custom cabinetry, stone countertops, new layouts, and finishes built to last.',
+    desc: 'Complete kitchen transformations — custom cabinetry, stone countertops, professional layouts, and finishes built to last.',
   },
   {
     icon: <BathroomSvg />,
@@ -492,7 +492,7 @@ function Services() {
         <SectionHeader
           eyebrow="What We Do"
           headline={<>OUR<br />SERVICES</>}
-          sub="Residential & commercial renovation work across all NYC 5 Boroughs — small jobs and large, done right."
+          sub="Residential & commercial renovation work across all of New York City's 5 boroughs — small jobs and large, done right."
         />
 
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -574,27 +574,25 @@ function About() {
 
             <div className="space-y-4 font-body text-warm-400 leading-relaxed">
               <p>
-                JFC Pro-Renovations has been transforming homes and businesses across all NYC 5 Boroughs since 2007. Over 1,000 completed projects — residential and commercial — built
-                on honest work and exceptional craftsmanship.
-              </p>
-              <p>
                 As a fully licensed and insured New York contractor, we take on projects of every size:
                 from a single bathroom refresh to full interior renovations for commercial spaces. No job
                 is too small, and no project is too large.
               </p>
               <p>
-                We&apos;re not a franchise. We&apos;re your neighbors, and we treat every space we work in
-                as if it were our own.
+                JFC Pro-Renovations has been transforming homes and businesses across all of New York City's 5 boroughs since 2007. Over 1,000 completed projects — residential and commercial — built
+                on honest work and exceptional craftsmanship.
+              </p>
+              <p>
+                We&apos;re your neighbors, and we treat every space we work in as if it were our own.
               </p>
             </div>
 
             <ul className="mt-8 space-y-3">
               {[
                 'Fully licensed & insured in New York State',
-                'Free, no-obligation in-home estimates',
+                'Free in-home estimates',
                 'Local family-run business since 2007',
                 'All work backed by a written guarantee',
-                'We pull all required permits — always above board',
               ].map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <span className="text-brand-400 mt-0.5 flex-shrink-0">
@@ -1036,7 +1034,7 @@ function Contact() {
                     <div className="font-body text-warm-300 text-sm leading-relaxed">
                       Woodside, Queens, NY
                       <br />
-                      <span className="text-warm-400/60">Serving all NYC 5 Boroughs</span>
+                      <span className="text-warm-400/60">Serving all of New York City's 5 boroughs</span>
                     </div>
                   ),
                 },
