@@ -647,23 +647,15 @@ function StatsBand() {
 const WHY_ITEMS = [
   {
     title: 'Free Estimates',
-    desc: 'We come to you. A detailed, written estimate with no pressure and no obligation — ever.',
+    desc: 'We come to you. A detailed, written estimate with no pressure and no obligation.',
   },
   {
     title: 'Licensed & Insured',
     desc: 'Fully licensed by New York State and fully insured. Your home and your investment are protected.',
   },
   {
-    title: 'Local Expertise',
-    desc: 'We know NYC homes — the quirks, the codes, and how to do it right.',
-  },
-  {
     title: 'Quality Materials',
-    desc: 'We use only premium materials and have long-standing relationships with trusted local suppliers.',
-  },
-  {
-    title: 'On-Time Delivery',
-    desc: 'We set realistic timelines and honor them. No unexplained delays, no moving goalposts.',
+    desc: 'We use premium materials and have long-standing relationships with trusted local suppliers.',
   },
   {
     title: 'Satisfaction Guaranteed',
@@ -682,7 +674,7 @@ function WhyChooseUs() {
           headline={<>WHY<br />CHOOSE US</>}
         />
 
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div ref={gridRef} className="grid md:grid-cols-2 gap-5">
           {WHY_ITEMS.map(({ title, desc }) => (
             <div
               key={title}
