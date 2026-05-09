@@ -802,6 +802,7 @@ const GALLERY_PHOTOS = [
   { src: '/images/flooring-room.jpg', alt: 'Luxury Vinyl Plank Flooring' },
   { src: '/images/kitchen-3.jpg', alt: 'Kitchen Renovation' },
   { src: '/images/bathroom-tile.jpg', alt: 'Bathroom Tile Work' },
+  { src: '/images/378.jpg', alt: 'Classic Subway Tile Bathroom' },
   { src: '/images/kitchen-dark-1.jpg', alt: 'Dark Kitchen with Red Quartz' },
 ]
 
